@@ -1,0 +1,19 @@
+<div class="relative h-full w-full">
+  <google-map [height]="'100%'" [width]="'100%'" [zoom]="zoom" [options]="options">
+    <map-marker
+      #marker="mapMarker"
+      *ngFor="let markerPosition of markerPositions"
+      [position]="markerPosition"
+      [options]="markerOptions"
+      (mapClick)="openInfoWindow(marker, markerPosition)">
+      <map-info-window>
+        {{ currentMarkerDescription }}
+      </map-info-window>
+    </map-marker>
+  </google-map>
+</div>
+<div
+  class="h-10 w-10 bg-gray-50 absolute top-14 right-2 flex justify-center items-center cursor-pointer"
+  (click)="updateAllVehicleLocations()">
+  <fa-icon [icon]="refreshIcon"></fa-icon>
+</div>

@@ -1,0 +1,11 @@
+<div class="h-full flex flex-col items-stretch justify-items-stretch">
+  <nav class="hidden bg-blue-700">
+    <a [routerLink]="['home']">Home</a>
+    <a [routerLink]="['about']">About</a>
+    <a [routerLink]="['responsive']">Responsive</a>
+  </nav>
+
+  <main class="h-full bg-gray-200">
+    <router-outlet></router-outlet>
+  </main>
+</div>
